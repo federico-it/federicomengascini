@@ -19,7 +19,7 @@ const Home = () => {
       <NextSeo title="Home" />
       <Text>WELCOME</Text>
 
-      <Image boxSize="200px" src="/fede.png" alt="Federico Emoji" />
+      <Image boxSize="200px" src="/fede.PNG" alt="Federico Emoji" />
       <SomeText />
       <SomeImage />
       <Text>View My Projects to get started. 🚀</Text>
