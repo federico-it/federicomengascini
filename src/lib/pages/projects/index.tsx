@@ -25,6 +25,9 @@ const Projects = () => {
       w="full"
     >
       <NextSeo title="Projects" />
+      <Text as="b" size="2xl">
+        MY WORKS
+      </Text>
       <SimpleGrid columns={[1, 2, 3]} spacing="40px">
         <GridItem w="100%" h="100%">
           <Center py={2}>
@@ -46,6 +49,7 @@ const Projects = () => {
                   fontWeight={800}
                   fontSize="sm"
                   letterSpacing={1.1}
+                  mt={[50, 0, 0]}
                 >
                   Ecommerce
                 </Text>
@@ -82,6 +86,7 @@ const Projects = () => {
                   fontWeight={800}
                   fontSize="sm"
                   letterSpacing={1.1}
+                  mt={[50, 0, 0]}
                 >
                   Tutorial
                 </Text>
@@ -119,6 +124,7 @@ const Projects = () => {
                   fontWeight={800}
                   fontSize="sm"
                   letterSpacing={1.1}
+                  mt={[100, 0, 0]}
                 >
                   Tutorial
                 </Text>
