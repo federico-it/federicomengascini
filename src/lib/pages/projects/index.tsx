@@ -2,7 +2,7 @@ import {
   Flex,
   Text,
   Image,
-  Grid,
+  SimpleGrid,
   GridItem,
   Center,
   Box,
@@ -25,7 +25,7 @@ const Projects = () => {
       w="full"
     >
       <NextSeo title="Projects" />
-      <Grid templateColumns="repeat(3, 1fr)" gap={4}>
+      <SimpleGrid columns={[1, 2, 3]} spacing="40px">
         <GridItem w="100%" h="100%">
           <Center py={2}>
             <Box w="full" boxShadow="2xl" rounded="md" p={3} overflow="hidden">
@@ -53,7 +53,7 @@ const Projects = () => {
                   YUNSHOP
                 </Heading>
                 <Text color="gray.500" h="97px">
-                  Compravendita Scarpe e Abbigliamento sia Nuovo che Usato.
+                  Purchase and sale of both new and used shoes and clothing.
                 </Text>
                 <Button as="a" href="https://yunshop.it" target="_blank">
                   Go Now 👟
@@ -89,8 +89,8 @@ const Projects = () => {
                   PLEXPY
                 </Heading>
                 <Text color="gray.500">
-                  Crea il tuo Media Server Plex su Raspberry Pi economico, in
-                  pochi e semplici passi.
+                  Build your own Plex Media Server on a cheap Raspberry Pi, in a
+                  few simple steps.
                 </Text>
                 <Button as="a" href="https://plexpy.com" target="_blank">
                   Go Now 🍿
@@ -126,17 +126,17 @@ const Projects = () => {
                   INSTANTPY
                 </Heading>
                 <Text color="gray.500">
-                  Raccolta di Semplici e Veloci Tutorial da 10 minuti massimo
-                  per l'utilizzo della piattaforma Raspberry Py.
+                  Collection of Simple and Fast Tutorials of 10 minutes maximum
+                  for using the Raspberry Py platform.
                 </Text>
-                <Button as="a" href="https://en.instantpy.it" target="_blank">
+                <Button as="a" href="https://instantpy.com" target="_blank">
                   Go Now 📖
                 </Button>
               </Stack>
             </Box>
           </Center>
         </GridItem>
-      </Grid>
+      </SimpleGrid>
     </Flex>
   );
 };
