@@ -1,4 +1,4 @@
-import { Box, Button, Flex } from "@chakra-ui/react";
+import { Box, Button, Flex, Link } from "@chakra-ui/react";
 import { AiFillGithub } from "react-icons/ai";
 
 const repoLink = "https://github.com/federico-it";
@@ -9,7 +9,7 @@ const CTASection = () => {
     <Box textAlign="center">
       <Box transform="scale(1)">
         <Flex justifyContent="center" marginY={4}>
-          <Button as="a" href="/projects">
+          <Button as={Link} href="/projects">
             Let's Go 🔥
           </Button>
         </Flex>
