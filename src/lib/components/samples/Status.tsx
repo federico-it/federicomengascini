@@ -101,7 +101,7 @@ export default function Status() {
     try {
       const response = await axios.get(`${CORS_PROXY}${API_URL}`, {
         headers: {
-          Authorization:'Bearer ${process.env.HETRIX_TOOLS_API_TOKEN}',
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_HETRIX_TOOLS_API_TOKEN}`,
         },
       });
       setMonitorData(response.data.monitors);
