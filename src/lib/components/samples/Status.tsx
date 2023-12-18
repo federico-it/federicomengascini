@@ -162,9 +162,9 @@ export default function Status() {
               >
                 {monitor.uptime_status === "up" ? "Online" : "Offline"}
               </Text>
-              <Text fontSize="xl">{monitor.name}</Text>
+              <Text color={"white"} fontSize="xl">{monitor.name}</Text>
             </Flex>
-            <Text fontSize="lg">{`${calculateUptimePercentage(
+            <Text color={"white"} fontSize="lg">{`${calculateUptimePercentage(
               monitor.uptime
             )}%`}</Text>
           </Flex>
