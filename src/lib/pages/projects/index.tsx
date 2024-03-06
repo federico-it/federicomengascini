@@ -97,7 +97,7 @@ const Projects = () => {
                   Build your own Plex Media Server on a cheap Raspberry Pi, in a
                   few simple steps.
                 </Text>
-                <Button as="a" href="https://plexpy.com" target="_blank">
+                <Button as="a" href="https://plexpy.federicomengascini.com" target="_blank">
                   Go Now 🍿
                 </Button>
               </Stack>
@@ -135,7 +135,7 @@ const Projects = () => {
                   Collection of Simple and Fast Tutorials of 10 minutes maximum
                   for using the Raspberry Py platform.
                 </Text>
-                <Button as="a" href="https://instantpy.com" target="_blank">
+                <Button as="a" href="https://instantpy.federicomengascini.com" target="_blank">
                   Go Now 📖
                 </Button>
               </Stack>
@@ -146,7 +146,7 @@ const Projects = () => {
           <Center py={2}>
             <Box w="full" boxShadow="2xl" rounded="md" p={3} overflow="hidden">
               <Box
-                h="148px"
+                h="150px"
                 bg="gray.100"
                 mt={-6}
                 mx={-6}
@@ -170,7 +170,7 @@ const Projects = () => {
                   ONLYIPV6
                 </Heading>
                 <Text color="gray.500">
-                A site available only in ipv6 with the possibility to test your ipv6 connection with speedtest.
+                  A site available only in ipv6 with the possibility to test your ipv6 connection with speedtest.
                 </Text>
                 <Button as="a" href="https://onlyipv6.com" target="_blank">
                   Go Now 🌐
@@ -179,43 +179,7 @@ const Projects = () => {
             </Box>
           </Center>
         </GridItem>
-        <GridItem w="100%" h="100%">
-          <Center py={2}>
-            <Box w="full" boxShadow="2xl" rounded="md" p={3} overflow="hidden">
-              <Box
-                h="148px"
-                bg="gray.100"
-                mt={-6}
-                mx={-6}
-                mb={6}
-                pos="relative"
-              >
-                <Image src="/ipmonitor.png" />
-              </Box>
-              <Stack>
-                <Text
-                  color="pink.500"
-                  textTransform="uppercase"
-                  fontWeight={800}
-                  fontSize="sm"
-                  letterSpacing={1.1}
-                  mt={[100, 0, 0]}
-                >
-                  Utility
-                </Text>
-                <Heading fontSize="2xl" fontFamily="body">
-                  IPmonitor
-                </Heading>
-                <Text color="gray.500">
-                Powerful application that enables you to monitor the status of IP addresses in real-time.
-                </Text>
-                <Button as="a" target="" disabled>
-                  Dismissed ❌⛔️
-                </Button>
-              </Stack>
-            </Box>
-          </Center>
-        </GridItem>
+
         <GridItem w="100%" h="100%">
           <Center py={2}>
             <Box w="full" boxShadow="2xl" rounded="md" p={3} overflow="hidden">
@@ -244,10 +208,10 @@ const Projects = () => {
                   UPTIMEBB
                 </Heading>
                 <Text color="gray.500">
-                Powerful application that enables you to monitor the status of a Website or a IP Address in real-time.
+                  Powerful application that enables you to monitor the status of a Website or a IP Address in real-time.
                 </Text>
-                <Button as="a" href="https://demo.uptimebb.com" target="_blank">
-                  Go Now 🌐
+                <Button as="a" target="" disabled>
+                  Dismissed ❌⛔️
                 </Button>
               </Stack>
             </Box>

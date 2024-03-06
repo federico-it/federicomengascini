@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Link from "next/link";
 import {
   Flex,
   Text,
@@ -34,7 +33,7 @@ export default function Status() {
   const fetchData = async () => {
     try {
       setIsLoading(true);
-      const response = await axios.get(`${CORS_PROXY}${API_URL}`, {
+      const response = await axios.get(`${API_URL}`, {
         headers: {
           Authorization: `Bearer ${process.env.NEXT_PUBLIC_HETRIX_TOOLS_API_TOKEN}`,
         },
@@ -99,7 +98,7 @@ export default function Status() {
   const handleRefresh = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get(`${CORS_PROXY}${API_URL}`, {
+      const response = await axios.get(`${API_URL}`, {
         headers: {
           Authorization: `Bearer ${process.env.NEXT_PUBLIC_HETRIX_TOOLS_API_TOKEN}`,
         },
@@ -176,12 +175,12 @@ export default function Status() {
               <Text color={useColorModeValue("gray.300", "gray.300")}>
                 Ping from countries:
                 {Object.entries(monitor.locations).map(([location, details]) => (
-                <Text key={location} color={useColorModeValue("gray.300", "gray.300")}>
-                   - {location}: {details.response_time} ms
-                </Text>
-              ))}
+                  <Text key={location} color={useColorModeValue("gray.300", "gray.300")}>
+                    - {location}: {details.response_time} ms
+                  </Text>
+                ))}
               </Text>
-              
+
 
               <Text color={useColorModeValue("gray.300", "gray.300")}>
                 Last Check: {formatDateTime(monitor.last_check)}
