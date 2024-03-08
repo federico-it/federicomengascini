@@ -1,4 +1,5 @@
-import { Flex, Text, Image, useBoolean } from "@chakra-ui/react";
+import { Flex, Text, useBoolean } from "@chakra-ui/react";
+import Image from "next/image";
 import { NextSeo } from "next-seo";
 
 import CTASection from "lib/components/samples/CTASection";
@@ -21,11 +22,12 @@ const Home = () => {
       <Text>WELCOME</Text>
       <div onMouseEnter={setFlag.on} onMouseLeave={setFlag.off}>
         {flag ? (
-          <Image boxSize="200px" src="/fede_love.png" alt="Federico Emoji" />
+          <Image src="/fede_love.png" alt="Federico Emoji" width={200} height={200} />
         ) : (
-          <Image boxSize="200px" src="/fede.PNG" alt="Federico Emoji" />
+          <Image src="/fede.PNG" alt="Federico Emoji" width={200} height={200} priority={true} />
         )}
       </div>
+
       <SomeText />
       <SomeImage />
       <Text>View My Projects to get started. 🚀</Text>

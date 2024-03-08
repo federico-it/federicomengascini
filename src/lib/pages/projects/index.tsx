@@ -1,20 +1,50 @@
-import {
-  Flex,
-  Text,
-  Image,
-  SimpleGrid,
-  GridItem,
-  Center,
-  Box,
-  Stack,
-  Heading,
-  Button,
-} from "@chakra-ui/react";
+import { Flex, Text, SimpleGrid, GridItem, Box, Stack, Heading, Button, useBreakpointValue } from "@chakra-ui/react";
 import { NextSeo } from "next-seo";
+import Image from "next/image";
+
+const projects = [
+  {
+    title: "YUNSHOP",
+    image: "/yunshop.png",
+    category: "Ecommerce",
+    description: "Purchase and sale of both new and used shoes and clothing.",
+    link: "https://yunshop.it",
+  },
+  {
+    title: "PLEXPY",
+    image: "/plexpy.png",
+    category: "Tutorial",
+    description: "Build your own Plex Media Server on a cheap Raspberry Pi, in a few simple steps.",
+    link: "https://plexpy.federicomengascini.com",
+  },
+  {
+    title: "INSTANTPY",
+    image: "/instantpy.png",
+    category: "Tutorial",
+    description: "Collection of Simple and Fast Tutorials of 10 minutes maximum for using the Raspberry Py platform.",
+    link: "https://instantpy.federicomengascini.com",
+  },
+  {
+    title: "ONLYIPV6",
+    image: "/onlyipv6.png",
+    category: "Utility",
+    description: "A site available only in ipv6 with the possibility to test your ipv6 connection with speedtest.",
+    link: "https://onlyipv6.com",
+  },
+  {
+    title: "UPTIMEBB",
+    image: "/uptimebb.png",
+    category: "Utility",
+    description: "Powerful application that enables you to monitor the status of a Website or a IP Address in real-time.",
+    link: "", // Add your link or set to empty string if not available
+    disabled: true, // Set to true if the project is dismissed
+  },
+];
 
 const Projects = () => {
+  const isMobile = useBreakpointValue({ base: true, md: false });
+
   return (
-    /* eslint-disable */
     <Flex
       direction="column"
       alignItems="center"
@@ -29,18 +59,33 @@ const Projects = () => {
         MY WORKS
       </Text>
       <SimpleGrid columns={[1, 2, 3]} spacing="40px">
-        <GridItem w="100%" h="100%">
-          <Center py={2}>
-            <Box w="full" boxShadow="2xl" rounded="md" p={3} overflow="hidden">
+        {projects.map((project, index) => (
+          <GridItem key={index} w="100%" h="100%">
+            <Box w="full" boxShadow="2xl" rounded="md" overflow="hidden">
               <Box
-                h="148px"
+                position="relative"
+                width="100%"
+                paddingBottom={(9 / 14) * 100 + "%"}
                 bg="gray.100"
-                mt={-6}
-                mx={-6}
-                mb={6}
-                pos="relative"
+                rounded="md"
+                overflow="hidden"
               >
-                <Image src="/yunshop.png" />
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority={
+                    (isMobile && index < 2) || (!isMobile && index < 6)
+                      ? true
+                      : false
+                  }
+                  loading={(!isMobile && index >= 6) || (isMobile && index >= 2) ? "lazy" : "eager"}
+                  style={{
+                    borderRadius: "8px",
+                    objectFit: 'cover',
+                  }}
+                />
               </Box>
               <Stack>
                 <Text
@@ -50,173 +95,32 @@ const Projects = () => {
                   fontSize="sm"
                   letterSpacing={1.1}
                   mt={[50, 0, 0]}
+                  p={3}
                 >
-                  Ecommerce
+                  {project.category}
                 </Text>
-                <Heading fontSize="2xl" fontFamily="body">
-                  YUNSHOP
+                <Heading fontSize="2xl" fontFamily="body" p={3}>
+                  {project.title}
                 </Heading>
-                <Text color="gray.500" h="97px">
-                  Purchase and sale of both new and used shoes and clothing.
+                <Text color="gray.500" h="97px" p={3}>
+                  {project.description}
                 </Text>
-                <Button as="a" href="https://yunshop.it" target="_blank">
-                  Go Now 👟
+                <Button
+                  m={3}
+                  as="a"
+                  href={project.link}
+                  target="_blank"
+                  disabled={project.disabled}
+                  _disabled={{ cursor: "not-allowed", opacity: 0.5 }}
+                  cursor={project.disabled ? "not-allowed" : "pointer"}
+                  onClick={(e) => project.disabled && e.preventDefault()}
+                >
+                  {project.disabled ? "Dismissed ❌⛔️" : "Go Now"}
                 </Button>
               </Stack>
             </Box>
-          </Center>
-        </GridItem>
-        <GridItem w="100%" h="100%">
-          <Center py={2}>
-            <Box w="full" boxShadow="2xl" rounded="md" p={3} overflow="hidden">
-              <Box
-                h="148px"
-                bg="gray.100"
-                mt={-6}
-                mx={-6}
-                mb={6}
-                pos="relative"
-              >
-                <Image src="/plexpy.png" />
-              </Box>
-              <Stack>
-                <Text
-                  color="pink.500"
-                  textTransform="uppercase"
-                  fontWeight={800}
-                  fontSize="sm"
-                  letterSpacing={1.1}
-                  mt={[50, 0, 0]}
-                >
-                  Tutorial
-                </Text>
-                <Heading fontSize="2xl" fontFamily="body">
-                  PLEXPY
-                </Heading>
-                <Text color="gray.500">
-                  Build your own Plex Media Server on a cheap Raspberry Pi, in a
-                  few simple steps.
-                </Text>
-                <Button as="a" href="https://plexpy.federicomengascini.com" target="_blank">
-                  Go Now 🍿
-                </Button>
-              </Stack>
-            </Box>
-          </Center>
-        </GridItem>
-        <GridItem w="100%" h="100%">
-          <Center py={2}>
-            <Box w="full" boxShadow="2xl" rounded="md" p={3} overflow="hidden">
-              <Box
-                h="148px"
-                bg="gray.100"
-                mt={-6}
-                mx={-6}
-                mb={6}
-                pos="relative"
-              >
-                <Image src="/instantpy.png" />
-              </Box>
-              <Stack>
-                <Text
-                  color="pink.500"
-                  textTransform="uppercase"
-                  fontWeight={800}
-                  fontSize="sm"
-                  letterSpacing={1.1}
-                  mt={[100, 0, 0]}
-                >
-                  Tutorial
-                </Text>
-                <Heading fontSize="2xl" fontFamily="body">
-                  INSTANTPY
-                </Heading>
-                <Text color="gray.500">
-                  Collection of Simple and Fast Tutorials of 10 minutes maximum
-                  for using the Raspberry Py platform.
-                </Text>
-                <Button as="a" href="https://instantpy.federicomengascini.com" target="_blank">
-                  Go Now 📖
-                </Button>
-              </Stack>
-            </Box>
-          </Center>
-        </GridItem>
-        <GridItem w="100%" h="100%">
-          <Center py={2}>
-            <Box w="full" boxShadow="2xl" rounded="md" p={3} overflow="hidden">
-              <Box
-                h="150px"
-                bg="gray.100"
-                mt={-6}
-                mx={-6}
-                mb={6}
-                pos="relative"
-              >
-                <Image src="/onlyipv6.png" />
-              </Box>
-              <Stack>
-                <Text
-                  color="pink.500"
-                  textTransform="uppercase"
-                  fontWeight={800}
-                  fontSize="sm"
-                  letterSpacing={1.1}
-                  mt={[100, 0, 0]}
-                >
-                  Utility
-                </Text>
-                <Heading fontSize="2xl" fontFamily="body">
-                  ONLYIPV6
-                </Heading>
-                <Text color="gray.500">
-                  A site available only in ipv6 with the possibility to test your ipv6 connection with speedtest.
-                </Text>
-                <Button as="a" href="https://onlyipv6.com" target="_blank">
-                  Go Now 🌐
-                </Button>
-              </Stack>
-            </Box>
-          </Center>
-        </GridItem>
-
-        <GridItem w="100%" h="100%">
-          <Center py={2}>
-            <Box w="full" boxShadow="2xl" rounded="md" p={3} overflow="hidden">
-              <Box
-                h="148px"
-                bg="gray.100"
-                mt={-6}
-                mx={-6}
-                mb={6}
-                pos="relative"
-              >
-                <Image src="/uptimebb.png" />
-              </Box>
-              <Stack>
-                <Text
-                  color="pink.500"
-                  textTransform="uppercase"
-                  fontWeight={800}
-                  fontSize="sm"
-                  letterSpacing={1.1}
-                  mt={[100, 0, 0]}
-                >
-                  Utility
-                </Text>
-                <Heading fontSize="2xl" fontFamily="body">
-                  UPTIMEBB
-                </Heading>
-                <Text color="gray.500">
-                  Powerful application that enables you to monitor the status of a Website or a IP Address in real-time.
-                </Text>
-                <Button as="a" target="" disabled>
-                  Dismissed ❌⛔️
-                </Button>
-              </Stack>
-            </Box>
-          </Center>
-        </GridItem>
+          </GridItem>
+        ))}
       </SimpleGrid>
     </Flex>
   );
