@@ -29,11 +29,11 @@ export default function Status() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const API_URL = "https://api.hetrixtools.com/v3/uptime-monitors";
-  const CORS_PROXY = "https://cors-anywhere.herokuapp.com/";
+  const CORS_PROXY = "https://cors.xfm.one/";
   const fetchData = async () => {
     try {
       setIsLoading(true);
-      const response = await axios.get(`${API_URL}`, {
+      const response = await axios.get(`${CORS_PROXY}${API_URL}`, {
         headers: {
           Authorization: `Bearer ${process.env.NEXT_PUBLIC_HETRIX_TOOLS_API_TOKEN}`,
         },
@@ -98,7 +98,7 @@ export default function Status() {
   const handleRefresh = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get(`${API_URL}`, {
+      const response = await axios.get(`${CORS_PROXY}${API_URL}`, {
         headers: {
           Authorization: `Bearer ${process.env.NEXT_PUBLIC_HETRIX_TOOLS_API_TOKEN}`,
         },
