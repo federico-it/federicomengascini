@@ -169,25 +169,37 @@ export default function Status() {
           </Flex>
           {expandedId === monitor.id && (
             <Box mt={4}>
-              <Text color={useColorModeValue("gray.300", "gray.300")}>
-                Type: {(monitor.type)}
+              <Text fontSize={"xl"} as='b' color={useColorModeValue("white", "white")}>
+                Last Check:
               </Text>
-              <Text color={useColorModeValue("gray.300", "gray.300")}>
-                Ping from countries:
-                {Object.entries(monitor.locations).map(([location, details]) => (
-                  <Text key={location} color={useColorModeValue("gray.300", "gray.300")}>
-                    - {location}: {details.response_time} ms
-                  </Text>
-                ))}
+              <Text mb={5} color={"white"}>{formatDateTime(monitor.last_check)}</Text>
+              <Text fontSize={"xl"} as='b' color={useColorModeValue("white", "white")}>
+                Last Status Change:
               </Text>
+              <Text mb={5} color={"white"}>{formatDateTime(monitor.last_status_change)}</Text>
+              <Text fontSize={"xl"} as={"b"} color={useColorModeValue("white", "white")}>
+                Type:
+              </Text>
+              <Text css={{
+                "&:first-letter": {
+                  textTransform: "uppercase",
+                },
+              }} color={"white"} mb={5}>{(monitor.type)}</Text>
+              <Text fontSize={"xl"} as="b" color={useColorModeValue("white", "white")}>
+                Ping:
+              </Text>
+              <Text color={"white"} mb={5}>{Object.entries(monitor.locations).map(([location, details]) => (
+                <Text css={{
+                  "&:first-letter": {
+                    textTransform: "uppercase",
+                  },
+                }} key={location} color={useColorModeValue("white", "white")}>
+                  {location}: {details.response_time} ms
+                </Text>
+              ))}</Text>
 
 
-              <Text color={useColorModeValue("gray.300", "gray.300")}>
-                Last Check: {formatDateTime(monitor.last_check)}
-              </Text>
-              <Text color={useColorModeValue("gray.300", "gray.300")}>
-                Last Status Change: {formatDateTime(monitor.last_status_change)}
-              </Text>
+
               {/* Additional information here */}
             </Box>
           )}
