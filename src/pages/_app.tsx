@@ -15,7 +15,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover"
         />
-                <script defer data-domain="federicomengascini.com" data-api="https://ans.fedelive.workers.dev/gattino/event" src="https://ans.fedelive.workers.dev/micino/script.js"></script>
+        {/* <script defer data-domain="federicomengascini.com" data-api="https://ans.fedelive.workers.dev/gattino/event" src="https://ans.fedelive.workers.dev/micino/script.js"></script> */}
       </Head>
       <DefaultSeo {...defaultSEOConfig} />
       <Layout>
