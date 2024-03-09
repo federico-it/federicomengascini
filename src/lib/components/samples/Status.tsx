@@ -29,7 +29,7 @@ export default function Status() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const API_URL = "https://api.hetrixtools.com/v3/uptime-monitors";
-  const CORS_PROXY = "https://cors.xfm.one/";
+  const CORS_PROXY = "https://s.federicomengascini.com/";
   const fetchData = async () => {
     try {
       setIsLoading(true);
