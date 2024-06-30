@@ -15,7 +15,7 @@ import { RiSpotifyFill } from "react-icons/ri";
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export default function NowPlaying() {
-  const { data, error, mutate } = useSWR("/now-playing", fetcher);
+  const { data, error, mutate } = useSWR("/api/now-playing", fetcher);
   const [elapsedTime, setElapsedTime] = useState<number | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
