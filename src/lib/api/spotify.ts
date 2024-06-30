@@ -2,10 +2,9 @@
 
 import axios from "axios";
 
-const client_id = "b276cb278b3044d2a04673e0b54ea5a9";
-const client_secret = "7cecb47ad9944855bd1d408b592032ea";
-const refresh_token =
-  "AQCx5OXaVV3ChLtShDPkX-Y1_i-rTMb4casKrefgYuImGS0ISMZRRWbu_3HBriWyRZ9A28quPg8xpYXyoz_tonS-9SojpC-c2vFdhH3wBSN4rL8caKAkafuPYglh6fZJe1U";
+const client_id = process.env.CLIENTID;
+const client_secret = process.env.CLIENTSECRET;
+const refresh_token = process.env.REFRESHTOKEN;
 
 const TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
 const NOW_PLAYING_ENDPOINT =
