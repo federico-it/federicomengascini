@@ -1,7 +1,6 @@
 import { IconButton, useColorMode } from "@chakra-ui/react";
 import { RiMoonFill, RiSunLine } from "react-icons/ri";
 import { Howl, Howler } from "howler";
-import ReactHowler from "react-howler";
 
 import switchOffSound from "../../../public/switch-off.mp3";
 import switchOnSound from "../../../public/switch-on.mp3";

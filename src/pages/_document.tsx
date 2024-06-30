@@ -21,7 +21,7 @@ class MyDocument extends Document {
           />
           <Meta />
         </Head>
-        <body>
+        <body className="antialiased">
           <ColorModeScript
             initialColorMode={customTheme.config?.initialColorMode}
           />
