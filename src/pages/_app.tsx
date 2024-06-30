@@ -24,5 +24,5 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     </Chakra>
   );
 };
-export const runtime = 'experimental-edge' // 'nodejs' (default) | 'edge'
+export const runtime = "experimental-edge";
 export default MyApp;
