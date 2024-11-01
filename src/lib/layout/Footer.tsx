@@ -1,5 +1,4 @@
 import { Box, Flex, Link, Text } from "@chakra-ui/react";
-import NowPlaying from "lib/components/NowPlaying";
 
 const Footer = () => {
   return (
@@ -16,7 +15,6 @@ const Footer = () => {
           </Link>
         </Text>
       </Flex>
-      <NowPlaying />
     </Box>
   );
 };
