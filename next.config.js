@@ -53,8 +53,4 @@ module.exports = withPWA({
 
     return config;
   },
-  images: {
-    loader: "custom",
-    loaderFile: "./src/lib/loader.js",
-  },
 });

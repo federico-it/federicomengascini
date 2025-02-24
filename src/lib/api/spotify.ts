@@ -1,4 +1,4 @@
-// lib/spotify.ts
+/* // lib/spotify.ts
 
 import axios from "axios";
 
@@ -54,3 +54,4 @@ export const getNowPlaying = async () => {
     timeTotal: song.item.duration_ms,
   };
 };
+ */
